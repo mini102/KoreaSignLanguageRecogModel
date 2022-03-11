@@ -22,7 +22,7 @@ hands = mp_hands.Hands(
     min_tracking_confidence=0.5)
 
 img = cv2.imread('cava.PNG')
-cap = cv2.VideoCapture('result/.mp4')
+cap = cv2.VideoCapture('result/Bong.mp4')
 
 
 # w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -166,7 +166,7 @@ def video():
                 if action_seq[-1] == action_seq[-2] == action_seq[-3]:   #마지막 3개의 action이 모두 같은 액션일때 -> 유효한 gesture
                     this_action = action
 
-                cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 0, 255), thickness=2)
+                cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
 
         # out.write(img0)
         # out2.write(img)
@@ -175,16 +175,32 @@ def video():
             break
 
 if __name__ == "__main__":
-    imagelist = []
-    img = cv2.imread('cava.PNG')
-    img = image(img)
-    imagelist.append(img)
-    img = cv2.imread('cava.PNG')
-    img = image(img)
-    img = cv2.imread('cava.PNG')
-    img = image(img)
-    log_dir = 'logs/newInput/'  # 'logs/gradient_tape/' 'logs/after/'
-    test_summary_writer = tf.summary.create_file_writer(log_dir)
-    with test_summary_writer.as_default():
-        tf.summary.image("Training data", img, step=0)
+    video()
+    # imagelist = []
+    # img = cv2.imread('cava.PNG')
+    # img = cv2.resize(img,(500,500))
+    # img = image(img)
+    # imagelist.append(img)
+    # img = cv2.imread('Bonju.PNG')
+    # img = cv2.resize(img,(500,500))
+    # img = image(img)
+    # imagelist.append(img)
+    # img = cv2.imread('oui.PNG')
+    # img = cv2.resize(img,(500,500))
+    # img = image(img)
+    # imagelist.append(img)
+    # img = cv2.imread('non.PNG')
+    # img = cv2.resize(img,(500,500))
+    # img = image(img)
+    # imagelist.append(img)
+    # img = cv2.imread('silvous.PNG')
+    # img = cv2.resize(img,(500,500))
+    # img = image(img)
+    # imagelist.append(img)
+    # log_dir = 'logs/newInput/'  # 'logs/gradient_tape/' 'logs/after/'
+    # test_summary_writer = tf.summary.create_file_writer(log_dir)
+    # with test_summary_writer.as_default(): # Don't forget to reshape. 
+    #     images = np.reshape(imagelist[0:5], (-1, 500, 500, 1)) 
+    #     tf.summary.image("5 test data examples", images, max_outputs=5, step=0)
+    #tf.summary.image("Training data", img, step=0)
     #video()

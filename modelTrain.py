@@ -6,12 +6,13 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 actions = ['Oui', 'Bonjour', 'Non','Cava','Silvous']
 
+Tpath = 1645425316
 data = np.concatenate([
-    np.load('dataset/seq_Oui_1645162589.npy'),
-    np.load('dataset/seq_Bonjour_1645162589.npy'),
-    np.load('dataset/seq_Non_1645162589.npy'),
-    np.load('dataset/seq_Cava_1645162589.npy'),
-    np.load('dataset/seq_Silvous_1645162589.npy')
+    np.load(f'dataset/seq_Oui_{Tpath}.npy'),
+    np.load(f'dataset/seq_Bonjour_{Tpath}.npy'),
+    np.load(f'dataset/seq_Non_{Tpath}.npy'),
+    np.load(f'dataset/seq_Cava_{Tpath}.npy'),
+    np.load(f'dataset/seq_Silvous_{Tpath}.npy')
 ], axis=0)
 
 x_data = data[:, :, :-1]
