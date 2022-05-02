@@ -1,12 +1,19 @@
-# Hand Gesture Recognition
+## Hand Gesture Recognition
 
 Deep learning based hand gesture recognition using LSTM and MediaPipie.
 
-[Demo video using PingPong Robot](https://youtu.be/g16KvSEq0XU)
+## Data set
+![image](https://user-images.githubusercontent.com/73246476/166186708-7036d512-6395-4859-8864-2c2c91b31604.png)
+https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-003
 
-![](result/thumb.webp)
+## Process
+![image](https://user-images.githubusercontent.com/73246476/166186774-368a9b28-49db-4007-b4f1-c67419beb5c2.png)
 
-<img src="result/result.gif" width="512px">
+## Result
+
+![image](https://user-images.githubusercontent.com/73246476/166186644-67b1eb12-d03f-4e8a-b19c-635a82da13d4.png)
+![image](https://user-images.githubusercontent.com/73246476/166186654-dcc7c5fa-6341-4d95-95ea-2ef68d4f646d.png)
+
 
 ## Files
 
@@ -14,9 +21,9 @@ Pretrained model in *models* directory.
 
 **create_dataset.py**
 
-Collect dataset from webcam.
+Collect dataset from korean hand language data set from AI Hub
 
-**train.ipynp**
+**train.py**
 
 Create and train the model using collected dataset.
 
@@ -24,15 +31,10 @@ Create and train the model using collected dataset.
 
 Test the model using webcam or video.
 
-**robot.py**
-
-Gesture control using PingPong Robot.
-
 ## Dependency
 
 - Python 3
 - TensorFlow 2.4
-- sklearn
 - numpy
 - OpenCV
 - MediaPipe
